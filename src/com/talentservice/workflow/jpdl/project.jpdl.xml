@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="project" xmlns="http://jbpm.org/4.4/jpdl">
+	<start g="46,158,48,48" name="start1">
+      <transition g="-52,-12" name="to issue" to="issue"/>
+   </start>
+   <task assignee="#{projectStarter}" g="119,21,92,52" name="issue">
+      <transition g="-33,-22" name="to approve" to="approve"/>
+   </task>
+   <task g="290,16,92,52" name="approve">
+   		<assignment-handler class="com.talentservice.workflow.handler.AssignApproverHandler"/>
+      <transition g="-31,-22" name="to bidding" to="bidding"/>
+      <transition g="-50,-22" name="to end1" to="end1"/>
+   </task>
+   <task assignee="#{projectStarter}" g="451,11,92,52" name="bidding">
+      <transition g="11,-13" name="to makePlan" to="makePlan"/>
+      <transition g="-50,-22" name="to end1" to="end1"/>
+   </task>
+   <task assignee="#{projectStarter}" g="453,117,92,52" name="makePlan">
+      <transition g="452,189:-70,-20" name="to confirmPlan" to="confirmPlan"/>
+   </task>
+   <task assignee="#{bidder}" g="603,219,124,48" name="completePlan">
+      <transition g="794,215:-55,-23" name="to confirmProduct" to="confirmProduct"/>
+   </task>
+   <end g="19,482,48,48" name="end1"/>
+   <task assignee="#{projectStarter}" g="846,324,149,50" name="payAndComment">
+      <transition name="to planOver" to="planOver" g="4,-3"/>
+   </task>
+   <fork g="685,416,48,48" name="fork1">
+      <transition g="-32,-21" name="to issuerComment" to="issuerComment"/>
+      <transition g="-48,7" name="to bidderComment" to="bidderComment"/>
+   </fork>
+   <join g="232,428,48,48" name="join1">
+      <transition g="-50,-22" name="to end1" to="end1"/>
+   </join>
+   <task assignee="#{projectStarter}" g="413,363,138,51" name="issuerComment">
+      <transition g="-28,-19" name="to join1" to="join1"/>
+   </task>
+   <task assignee="#{bidder}" g="408,476,147,52" name="bidderComment">
+      <transition g="-29,6" name="to join1" to="join1"/>
+   </task>
+   <task assignee="#{bidder}" g="443,214,105,49" name="confirmPlan">
+      <transition g="-51,24" name="to completePlan" to="completePlan"/>
+      <transition g="554,185:-3,-15" name="to makePlan" to="makePlan"/>
+   </task>
+   <task assignee="#{projectStarter}" g="853,220,123,57" name="confirmProduct">
+      <transition g="6,-6" name="to payAndComment" to="payAndComment"/>
+      <transition g="802,279:-60,-1" name="to completePlan" to="completePlan"/>
+   </task>
+   <task assignee="#{projectStarter}" g="879,444,92,52" name="planOver">
+      <transition name="to fork1" to="fork1" g="-31,-21"/>
+      <transition name="to makePlan" to="makePlan" g="1140,469;1132,145:-119,145"/>
+   </task>
+</process>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.ui.theme" value="simple"></constant>
+    <constant name="struts.action.excludePattern" value="/websocket.*"></constant>
+    
+    <include file="struts2/struts-user.xml"></include>
+    <include file="struts2/struts-project.xml"></include>
+    <include file="struts2/struts-label.xml"></include>
+    <include file="struts2/struts-circle.xml"></include>
+    <include file="struts2/struts-category.xml"></include>
+    <include file="struts2/struts-province.xml"></include>
+    <include file="struts2/struts-login.xml"></include>
+    <include file="struts2/struts-register.xml"></include>
+    <include file="struts2/struts-workflow.xml"></include>
+    <include file="struts2/struts-rbac.xml"></include>
+	
+	<package name="global" extends="struts-default">
+		<global-results>
+			<result name="error">/front/error.jsp</result>
+			<result name="input">/front/error.jsp</result>
+			<result type="stream"></result>
+		</global-results>
+	</package>
+	
+</struts>

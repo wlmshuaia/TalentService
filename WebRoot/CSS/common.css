@@ -1,0 +1,47 @@
+#myDialog {width:350px;padding:30px 20px}
+.form-contain {margin-bottom:20px}
+.form-contain input {}
+
+/* 单个对象 ：简介、列表等 */
+.oneContent { width: 100%; min-height: 150px; overflow: hidden; border-bottom: #3e6372 1px solid;}
+.schoolIntro { font-size: 24px; color:#3e6270; width:100%; height: auto; margin:0 auto; margin-top:20px; padding-left: 25px; clear: right;}
+.schoolIntro .issueHead { float: left;}
+.schoolIntro .issueTrain { float: left; margin-left: 30px; font-size: 14px; }
+.schoolIntro .issueTrain a { padding: 4px 6px; color: white; background: #3e6372; border-radius: 4px; display: block;float: left; margin-left: 10px;}
+.schoolContent { float: left; font-size:16px; width:100%; margin:0 auto; margin-top:20px; padding-left: 40px;}
+.schoolContent ul { padding: 0; margin: 0; margin-bottom: 20px; }
+.schoolContent ul li { list-style: none; color: #3e6372;; margin-top: ; display: block; width: 100%; min-height: 25px; overflow-y: hidden; display: block; clear: right; font-size: 14px;border-bottom: #3e6372 1px dotted;}
+.schoolContent ul li a { color: #3e6372;}
+.schoolContent ul li a:hover { color: #ff6900;}
+.schoolContent .professionName { width: 150px; float:left; }
+.schoolContent .infoSubmit { float: left; margin: 0 0 20px 20px; border: none; width: auto; height: auto; padding: 4px 6px; border-radius: 4px; background: #3e6372; color: white;}
+
+/* 评论列表 */
+.schoolContent .reviewHead { width: 64px; height: 64px; float: left; margin: 6px; border-radius: 100px; border: #3e6372 1px solid;}
+.schoolContent .reviewContainer { width: 70%; height: 65px; float: left; padding-top: 15px; margin-left: 10px;}
+.schoolContent .reviewContainer .reviewer { color: red; }
+.schoolContent .reviewContainer .reviewContent { }
+.schoolContent .reviewTimeContainer { width: 15%; height: 65px; float: left; text-align: right; }
+.schoolContent .reviewTimeContainer .reviewTime { padding-top: 15px;}
+.schoolContent .reviewTimeContainer .reviewReply { }
+.schoolContent .reviewTimeContainer .reviewReply a { color: green;}
+.schoolContent .reviewTimeContainer .reviewReply a:hover { color: #3e6372;}
+
+/* 发布评论 */
+.schoolContent .review { width: 90%; min-height: 200px; margin-bottom: 20px; overflow: hidden; float: left; border: #3e6372 1px solid; border-radius: 4px;}
+.schoolContent .review h5 { float: left; clear: all; padding-left: 20px;}
+.schoolContent .review .reviewCon { text-align: center; }
+.schoolContent .review .reviewCon textarea { width: 95%; height: 120px;}
+.schoolContent .review .reviewSub { float: right; margin: 10px 20px 10px 0 ;}
+.schoolContent .review .reviewSub input{ float: right; width: auto; height: auto; padding: 6px 12px; border: none; border-radius: 4px; background: #3e6372; color: white; cursor: pointer;}
+
+/* 分页样式 */
+.page { width: 300px; height:30px; margin: 20px auto; margin-bottom: 20px;}
+.page a { text-decoration: none; border-radius: 4px;}
+.page a:hover {background: #b2d4dc; color: white;}
+.page span { float: left; display: block; width:70px; height:25px; text-align: center; line-height:25px; border-radius: 4px; font-size: 14px; color: #b2d4dc;} 
+.page span a {display: block; width:70px; height:25px; color: #3e6372;}
+.page ul {float: left; padding: 0; margin: 0 10px 0 5px; list-style-type: none;}
+.page ul li {float: left; padding: 0; text-align: center; color: #3e6372; margin-left: 5px; line-height: 25px; width:25px; height:25px; border-radius: 8px; border: 1px #b2d4dc solid;}
+.page ul li a { display: block; width:25px; height:25px; color: #3e6372; }
+.page .choose { border-color: #ff6900; color: #3e6372;}

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+<session-factory>
+
+	<property name="dialect">
+		org.hibernate.dialect.MySQL5InnoDBDialect
+	</property>
+	<property name="connection.url">
+		jdbc:mysql://localhost:3306/talentservice?useUnicode=true&amp;characterEncoding=utf-8&amp;useOldAliasMetadataBehavior=true
+	</property>
+	<property name="connection.username">root</property>
+	<property name="connection.password">000000</property>
+	<property name="connection.driver_class">
+		com.mysql.jdbc.Driver
+	</property>
+	<property name="myeclipse.connection.profile">mysql</property>
+	<property name="show_sql">true</property>
+	<property name="hbm2ddl.auto">update</property>
+	<!-- 
+		<property name="current_session_context_class">thread</property>
+	-->
+
+	<mapping resource="jbpm.repository.hbm.xml" />
+	<mapping resource="jbpm.execution.hbm.xml" />
+	<mapping resource="jbpm.history.hbm.xml" />
+	<mapping resource="jbpm.task.hbm.xml" />
+	<mapping resource="jbpm.identity.hbm.xml" />
+
+	<mapping resource="com/talentservice/domain/Bid.hbm.xml" />
+	<mapping resource="com/talentservice/domain/Category.hbm.xml" />
+	<mapping resource="com/talentservice/domain/Circle.hbm.xml" />
+	<mapping resource="com/talentservice/domain/City.hbm.xml" />
+	<mapping resource="com/talentservice/domain/Comment.hbm.xml" />
+	<mapping resource="com/talentservice/domain/County.hbm.xml" />
+	<mapping resource="com/talentservice/domain/Enterprise.hbm.xml" />
+	<mapping resource="com/talentservice/domain/Evaluate.hbm.xml" />
+	<mapping resource="com/talentservice/domain/File.hbm.xml" />
+	<mapping resource="com/talentservice/domain/Interview.hbm.xml" />
+	<mapping resource="com/talentservice/domain/Label.hbm.xml" />
+	<mapping resource="com/talentservice/domain/Message.hbm.xml" />
+	<mapping resource="com/talentservice/domain/Plan.hbm.xml" />
+	<mapping resource="com/talentservice/domain/Project.hbm.xml" />
+	<mapping resource="com/talentservice/domain/Province.hbm.xml" />
+	<mapping resource="com/talentservice/domain/School.hbm.xml" />
+	<mapping resource="com/talentservice/domain/Street.hbm.xml" />
+	<mapping resource="com/talentservice/domain/Student.hbm.xml" />
+	<mapping resource="com/talentservice/domain/Topic.hbm.xml" />
+	<mapping resource="com/talentservice/domain/User.hbm.xml" />
+	<mapping resource="com/talentservice/domain/UserCategory.hbm.xml" />
+	<mapping resource="com/talentservice/domain/UserCircle.hbm.xml" />
+	<mapping resource="com/talentservice/domain/UserFocus.hbm.xml" />
+	<mapping resource="com/talentservice/domain/UserLabel.hbm.xml" />
+	<mapping resource="com/talentservice/domain/UserUser.hbm.xml" />
+	<mapping resource="com/talentservice/domain/Workman.hbm.xml" />
+	<mapping resource="com/talentservice/domain/Admin.hbm.xml" />
+	<mapping resource="com/talentservice/domain/Projectlog.hbm.xml" />
+	<mapping resource="com/talentservice/domain/Approve.hbm.xml" />
+	<mapping resource="com/talentservice/domain/Node.hbm.xml" />
+	<mapping resource="com/talentservice/domain/Role.hbm.xml" />
+	<mapping resource="com/talentservice/domain/RoleNode.hbm.xml" />
+	<mapping resource="com/talentservice/domain/AdminRole.hbm.xml" />
+	<mapping resource="com/talentservice/domain/ProjectLabel.hbm.xml" />
+	<mapping resource="com/talentservice/domain/Score.hbm.xml" />
+	<mapping resource="com/talentservice/domain/Group.hbm.xml" />
+	<mapping resource="com/talentservice/domain/GroupUser.hbm.xml" />
+	<mapping resource="com/talentservice/domain/Chat.hbm.xml" />
+	<mapping resource="com/talentservice/domain/Teacher.hbm.xml" />
+	<mapping resource="com/talentservice/domain/Planfile.hbm.xml" />
+	<mapping resource="com/talentservice/domain/College.hbm.xml" />
+	<mapping resource="com/talentservice/domain/Profession.hbm.xml" />
+	<mapping resource="com/talentservice/domain/Review.hbm.xml" />
+
+</session-factory>
+</hibernate-configuration>

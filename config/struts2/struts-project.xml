@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="aproject" namespace="/aproject" extends="struts-default">
+		<!--后台项目有关操作-->
+		<action name="aprojectAction_*" method="{1}" class="aprojectAction">
+			<result type="plainText" />
+		</action>
+	</package>
+	
+	<package name="project" namespace="/project" extends="struts-default">
+		<!-- 前台项目有关操作 发包方-->
+		<action name="wprojectAction_*" method="{1}" class="projectAction">
+			<result name="searchResult">/front/project/projectList.jsp</result>
+			
+			<result name="error">/front/error.jsp</result>
+			<result name="input">/front/error.jsp</result>
+			<result name="addUI">/front/project/projectAdd.jsp</result>
+			<result name="listAction">/front/project/projectList.jsp</result>
+			<result name="getInfo">/front/project/projectInfo.jsp</result>
+			
+			<result name="personalProjectList">/front/issuer/projectList.jsp</result>
+			<result name="personalProjectInfo">/front/issuer/projectInfo.jsp</result>
+			
+			<result name="bidderProjectList">/front/bidder/projectList.jsp</result>
+			<result name="bidderProjectInfo">/front/bidder/projectInfo.jsp</result>
+			
+			<result name="groupList">/front/project/groupList.jsp</result>
+			<result name="groupTalkUI">/front/project/groupTalk.jsp</result>
+			
+			<result name="action2action" type="redirectAction">wprojectAction_dataList.action</result>
+			<result type="stream">
+				<!--
+					输入流的名字
+					   用来获取inputStream
+				-->
+				<param name="inputName">inputStream</param>
+				<!-- 名称的名字 -->
+				<param name="contentDisposition">
+					<!-- 
+						应用ognl表达式动态显示要下载的文件的名字
+					-->
+					attachment;filename="${#fileName}"
+				</param>
+			</result>
+		</action>
+		
+		<!-- 竞标有关操作 -->
+		<action name="wbidAction_*" method="{1}" class="bidAction">
+			<result name="personalProjectList" type="redirectAction">wprojectAction_personalProjectList.action</result>
+		</action>
+		
+		<!-- 项目计划有关操作 -->
+		<action name="wplanAction_*" method="{1}" class="planAction">
+			<result name="planList">/front/issuer/planList.jsp</result>
+			<result name="planInfo">/front/issuer/planInfo.jsp</result>
+			<result name="makePlanUI">/front/issuer/planAdd.jsp</result>
+			<result name="confirmPlanUI">/front/bidder/planInfo.jsp</result>
+			<result name="completePlanUI">/front/bidder/planInfo.jsp</result>
+			<result name="confirmProductUI">/front/bidder/planInfo.jsp</result>
+			<result name="planOverUI">/front/bidder/planInfo.jsp</result>
+			<result name="payAndCommentUI">/front/issuer/payAndComment.jsp</result>
+			<result name="confirm" type="redirectAction">wplanAction_bidderProjectList.action</result>
+			
+			<result name="commentUI">/front/issuer/comment.jsp</result>
+			<result type="redirectAction">wprojectAction_bidderProjectList.action</result>
+			
+			<result name="planList">/front/project/planList.jsp</result>
+			
+			<result name="bidderProjectList" type="redirectAction">wprojectAction_bidderProjectList.action</result>
+			<result name="issuerProjectList" type="redirectAction">wprojectAction_personalProjectList.action</result>
+			<result name="planAddSuccess" type="redirectAction">wprojectAction_personalProjectList.action</result>
+		</action>
+		
+		<action name="luceneAction_*" method="{1}" class="luceneAction">
+			<result name="searchResult">/front/project/searchResult.jsp</result>
+		</action>
+		
+	</package>
+    
+</struts>

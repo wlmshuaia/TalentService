@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	
+	<package name="auser" namespace="/auser" extends="struts-default">
+		<!--后台用户管理-->
+		<action name="auserAction_*" method="{1}" class="auserAction"> 
+			<result type="plainText" />
+		</action>
+	</package>
+	
+	<package name="user" namespace="/user" extends="struts-default">
+		<!--前台用户管理-->
+		<action name="userAction_*" method="{1}" class="userAction">
+			<result name="personal">/front/user/personal.jsp</result>
+			<result type="stream"></result>
+		</action>
+		
+		<action name="studentAction_*" method="{1}" class="studentAction">
+			<result name="personal" type="redirectAction">user/userAction_getPersonal.action</result>
+			<result name="studentList">/front/user/studentList.jsp</result>
+			<result name="projectList">/front/user/projectList.jsp</result>
+			<result type="stream"></result>
+		</action>
+		
+		<action name="schoolAction_*" method="{1}" class="schoolAction">
+			<result name="schoolInfo">/front/user/school.jsp</result>
+			<result name="dataList">/front/user/schoolList.jsp</result>
+			<result name="infoEditUI">/front/user/infoEdit.jsp</result>
+			<result name="school"  type="redirectAction">user/schoolAction_getSchool.action</result>
+			<result type="stream"></result>
+		</action>
+		
+		<action name="collegeAction_*" method="{1}" class="collegeAction">
+			<result name="collegeInfo">/front/user/college.jsp</result>
+			<result name="collegeAddUI">/front/user/collegeAdd.jsp</result>
+			<result type="stream"></result>
+		</action>
+		
+	</package>
+	
+</struts>

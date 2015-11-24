@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="pro" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="1,54,48,48" name="start1">
+      <transition g="-39,-24" name="to 项目发布" to="项目发布"/>
+   </start>
+   <end g="13,414,48,48" name="end1"/>
+   <task g="166,48,92,52" name="项目发布">
+      <transition g="-49,-21" name="to 项目审核" to="项目审核"/>
+   </task>
+   <task g="384,48,92,52" name="项目审核">
+      <transition g="-48,-21" name="to 项目竞标" to="项目竞标"/>
+      <transition g="-50,-22" name="to end1" to="end1"/>
+   </task>
+   <task g="587,48,92,52" name="项目竞标">
+      <transition g="-34,-23" name="to 制定计划" to="制定计划"/>
+      <transition g="-50,-22" name="to end1" to="end1"/>
+   </task>
+   <task g="765,48,92,52" name="制定计划">
+      <transition g="-26,3" name="to 确认计划" to="确认计划"/>
+   </task>
+   <task g="942,50,92,52" name="确认计划">
+      <transition g="-69,-22" name="to 完成计划" to="完成计划"/>
+      <transition g="989,12;938,11;810,15:-84,8" name="to 制定计划" to="制定计划"/>
+   </task>
+   <task g="945,165,92,52" name="完成计划">
+      <transition g="-63,-10" name="to 确认产品" to="确认产品"/>
+   </task>
+   <task g="948,284,92,52" name="确认产品">
+      <transition g="-64,-18" name="to 付款评价" to="付款评价"/>
+      <transition g="1118,307;1115,190:-69,-22" name="to 完成计划" to="完成计划"/>
+   </task>
+   <task g="948,390,92,52" name="付款评价">
+      <transition name="to 计划完成" to="计划完成" g="-32,-23"/>
+   </task>
+   <task g="390,339,92,52" name="发布方评价">
+      <transition g="-32,-22" name="to join1" to="join1"/>
+   </task>
+   <task g="383,437,92,52" name="承接方评价">
+      <transition g="-32,3" name="to join1" to="join1"/>
+   </task>
+   <fork g="607,390,48,48" name="fork1">
+      <transition g="-27,-22" name="to 发布方评价" to="发布方评价"/>
+      <transition g="-35,8" name="to 承接方评价" to="承接方评价"/>
+   </fork>
+   <join g="188,416,48,48" name="join1">
+      <transition g="-17,-16" name="to end1" to="end1"/>
+   </join>
+   <task name="计划完成" g="774,389,92,52">
+      <transition name="to fork1" to="fork1" g="-36,-22"/>
+      <transition name="to 制定计划" to="制定计划" g="-69,-22"/>
+   </task>
+</process>

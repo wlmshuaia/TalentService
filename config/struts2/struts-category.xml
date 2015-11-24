@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	
+	<package name="acategory" namespace="/acategory" extends="struts-default">
+		<!--后台分类管理-->
+		<action name="acategoryAction_*" method="{1}" class="acategoryAction"> 
+			<result type="plainText" />
+		</action>
+	</package>
+	
+	<package name="category" namespace="/category" extends="struts-default">
+		<!--分类管理-->
+		<action name="categoryAction_*" method="{1}" class="categoryAction"> 
+			<result name="success" />
+		</action>
+	</package>
+    
+</struts>

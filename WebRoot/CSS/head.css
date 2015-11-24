@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* CSS Document */
+a{ text-decoration:none; cursor:pointer;}
+body{ margin:0 auto; font-family:"微软雅黑";}
+#all{ margin:0 auto; font-family:"微软雅黑";}
+#heada{ margin:0 auto;background-color:#fbfbfd;height: 100px;}
+#head{ width:1344px; height:78px; margin:0 auto;}
+#head div{ float:left;} 
+#head1{ width:150px; height:72px; margin:10px 0 0 120px; float:left; background-image:url(../images/logo.png);}
+/*#head2{ float:left20px; color:#3e6372; font-size:30px; margin-top:20px;}*/
+#head3{ margin-top:45px; margin-left:50px;}
+#head3 li{ float:left; list-style:none;  color:#3e6372; font-size:20px; margin-left:80px;}
+
+#head3 a:hover{ color:#ff6900; cursor:pointer;}
+#head3 a:link{ text-decoration:none;}
+#head3 a{color:#3e6372;}
+
+#head4{ width:126px; height:42px; margin-top:35px; border:1px #b2d5db solid; border-radius:4px; margin-left:100px;}
+#head4 div{ width:50px; height:40px; background:url(../images/search.png); float:left; border:1px #ff6900 solid; margin-left:2px; border-radius:2px; box-shadow:2px 0px #ff6900;}
+#sousuo{ margin-left:4px; width:66px; height:34px; float:left; background:url(../images/sousuo_2.gif); border:none; margin-top:3px; font-size:16px; color:#000000; font-family:"微软雅黑";}
+#head5{width:170px; height:42px; margin-top:35px; margin-left:50px;}
+#head5 div{ float:left; height:42px;}
+
+#main { border-top:1px #6b6b6b solid; }
+
+#geren{ width:90px; position:block;}
+.gerenxiaoxi-container { width: 160px; height: 360px; background: url(../images/jian.png) no-repeat 100px 12px; margin-left: -60px;}
+#gerenxiaoxi{ position:absolute; width:146px; border-radius:3px; background:#b2d4dd; top: 80px; font-size: 16px; margin-top: 15px; }
+#gerenxiaoxi li{ width:146px; height:35px; border-bottom:1px #a1bec6 solid; color:#000; list-style:none;}
+#gerenxiaoxi li a{ display:inline-block; width:100px; height:35px; color: #316372;}
+#gerenxiaoxi span{ display:inline-block; font-size:12px; background:#ff6900; width:20px; color: white; line-height:22px; height:20px; margin-top:2px; border-radius:40px; }
+
+#foota{ margin:0 auto; background-color:#fff;}
+#foot{height:140px; margin:0 auto; width:1344px;}
+#footimage{ width:407px; height:151px; background-image:url(../images/logo_foot.gif); float:left; margin-left:120px;}
+#foottext{ width:360px; height:24px; color:#bcdae1; float:left; margin-left:330px; margin-top:70px; font-size:18px; padding-left:5px;}
+#foottext a:hover{ color:#ff6900;  }
+
+#weizhi { font-size: 16px; color: #848484; border:1px dashed #d7d6db;}
+#weizhi span {font-size:15px; }
+#weizhi a{ font-size: 15px; color: #848484;}
+
+

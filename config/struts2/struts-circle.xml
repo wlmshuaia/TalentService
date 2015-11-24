@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="acircle" namespace="/acircle" extends="struts-default">
+		<!--圈子后台 json 数据管理-->
+		<action name="acircleAction_*" method="{1}" class="acircleAction">
+			<result type="plainText" />
+		</action>
+	</package>
+	
+	<package name="circle" namespace="/circle" extends="struts-default">
+		<!-- 前台圈子管理 -->
+		<action name="wcircleAction_*" method="{1}" class="circleAction">
+			<result type="plainText" />
+			<result name="listAction">/front/circle/circleList.jsp</result>
+			<result name="addUI">/front/circle/circleAdd.jsp</result>
+			<result name="getInfo">/front/circle/circleInfo.jsp</result>
+			<result name="circleInfo2action" type="redirectAction">wcircleAction_getInfo.action?cid=${#cid}</result>
+			<result name="topicList">/front/circle/topicList.jsp</result>
+			<result name="topicInfo">/front/circle/topicInfo.jsp</result>
+			<result name="topicInfo2action" type="redirectAction">wcircleAction_topicInfo.action?tid=${tid}</result>
+			<result name="action2action" type="redirectAction">wcircleAction_dataList.action</result>
+		</action>
+	</package>
+    
+</struts>

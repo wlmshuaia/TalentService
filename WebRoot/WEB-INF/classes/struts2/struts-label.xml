@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	
+	<package name="alabel" namespace="/alabel" extends="struts-default">
+		<!--后台标签管理-->
+		<action name="alabelAction_*" method="{1}" class="alabelAction"> 
+			<result type="plainText" />
+		</action>
+	</package>
+	
+	<package name="label" namespace="/label" extends="struts-default">
+		<!--标签管理-->
+		<action name="labelAction_*" method="{1}" class="labelAction"> 
+			<result name="success" />
+		</action>
+	</package>
+    
+</struts>
